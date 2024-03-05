@@ -15,14 +15,20 @@ public class SparkWebServer {
 
         port(getPort());
         get("cliente", (req,res) -> {
+
             String htmlResponse = htmlResponse();
             return htmlResponse;
+
         });
         
         get("sin", (req,res) -> {
-            Double numero = Double.parseDouble(req.queryParams("numero"));
-            Double resultado = sin(numero);
-            return resultado;
+            try{
+                Double numero = Double.parseDouble(req.queryParams("numero"));
+                Double resultado = sin(numero);
+                return resultado;
+            } catch (NumberFormatException e) {
+                return null;
+            }
         });
 
         get("cos", (req,res) -> {
@@ -32,7 +38,7 @@ public class SparkWebServer {
         });
 
         get("palindrome", (req,res) -> {
-            String palabra = req.queryParams("palabra");
+            String palabra = req.queryParams("palabra").toLowerCase();
             StringBuilder conversion = new StringBuilder(palabra);
             String reverso = conversion.reverse().toString();
             return palabra.equals(reverso);
@@ -57,28 +63,32 @@ public class SparkWebServer {
         String html = "<!DOCTYPE html>\n" +
                 "<html>    \n" +
                 "<head>        \n" +
-                "<title>Form Example</title>        \n" +
+                "<title>Funciones</title>        \n" +
                 "<meta charset=\"UTF-8\">        \n" +
                 "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">    \n" +
                 "</head>    \n" +
-                "<body>        \n" +
+                "<style>\n" +
+                "  body {\n" +
+                "    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);\n" +
+                "  }\n" +
+                "</style>"+
+                "<body >        \n" +
+
                 "<h1>Funcion seno</h1>        \n" +
-                "<form action=\"/hello\">           \n" +
-                "<label for=\"name\">Name:</label><br>            \n" +
-                "<input type=\"text\" id=\"name\" name=\"name\" value=\"John\"><br><br>            \n" +
-                "<input type=\"button\" value=\"Submit\" onclick=\"loadGetMsg()\">        \n" +
+                "<label for=\"name\">Ingrese el numero:</label><br>            \n" +
+                "<input type=\"text\" id=\"number\" name=\"number\" value=\"\"><br><br>            \n" +
+                "<input type=\"button\" value=\"enviar\" onclick=\"loadGetMsg()\">        \n" +
                 "</form><div id=\"getrespmsg\"></div>\n" +
                 "<script>function loadGetMsg() {\n" +
-                "let nameVar = document.getElementById(\"name\").value;                \n" +
+                "let nameVar = document.getElementById(\"number\").value;                \n" +
                 "const xhttp = new XMLHttpRequest();\n" +
                 "xhttp.onload = function() {                    \n" +
                 "document.getElementById(\"getrespmsg\").innerHTML =                    this.responseText;                }                \n" +
-                "xhttp.open(\"GET\", \"/sin?numero=\"+nameVar); xhttp.send();}        </script>       \n"+
+                "xhttp.open(\"GET\", \"/sin?numero=\"+nameVar); xhttp.send();}        </script>       \n" +
 
-                "<h1>Funcion cos</h1>        \n" +
-                "<form action=\"/hola\">           \n" +
-                "<label for=\"name\">Name:</label><br>            \n" +
-                "<input type=\"text\" id=\"valor\" name=\"valor\" value=\"John\"><br><br>            \n" +
+                "<h1>Funcion coseno</h1>        \n" +
+                "<label for=\"name\">Ingrese el numero:</label><br>            \n" +
+                "<input type=\"text\" id=\"valor\" name=\"valor\" value=\"\"><br><br>            \n" +
                 "<input type=\"button\" value=\"enviar\" onclick=\"loadMsg()\">        \n" +
                 "</form><div id=\"msg\"></div>\n" +
                 "<script>function loadMsg() {\n" +
@@ -86,7 +96,33 @@ public class SparkWebServer {
                 "const xhttp = new XMLHttpRequest();\n" +
                 "xhttp.onload = function() {                    \n" +
                 "document.getElementById(\"msg\").innerHTML =                    this.responseText;                }                \n" +
-                "xhttp.open(\"GET\", \"/cos?numero=\"+nameVar); xhttp.send();}        </script> ";
+                "xhttp.open(\"GET\", \"/cos?numero=\"+nameVar); xhttp.send();}        </script>" +
+
+                " <h1>Palindrome</h1>        \n" +
+                "<label for=\"name\">Ingrese la palabra:</label><br>            \n" +
+                "<input type=\"text\" id=\"word\" name=\"word\" value=\"\"><br><br>            \n" +
+                "<input type=\"button\" value=\"enviar\" onclick=\"load()\">        \n" +
+                "</form><div id=\"respuesta\"></div>\n" +
+                "<script>function load() {\n" +
+                "let nameVar = document.getElementById(\"word\").value;                \n" +
+                "const xhttp = new XMLHttpRequest();\n" +
+                "xhttp.onload = function() {                    \n" +
+                "document.getElementById(\"respuesta\").innerHTML =                    this.responseText;                }                \n" +
+                "xhttp.open(\"GET\", \"/palindrome?palabra=\"+nameVar); xhttp.send();}        </script> " +
+
+                "<h1>Vector</h1>        \n" +
+                "<label for=\"name\">Ingrese los numeros:</label><br>            \n" +
+                "<input type=\"text\" id=\"valor1\" name=\"valor1\" value=\"\"><br><br>            \n" +
+                "<input type=\"text\" id=\"valor2\" name=\"valor2\" value=\"\"><br><br>            \n" +
+                "<input type=\"button\" value=\"enviar\" onclick=\"prueba()\">        \n" +
+                "</form><div id=\"informacion\"></div>\n" +
+                "<script>function prueba() {\n" +
+                "let nameVar1 = document.getElementById(\"valor1\").value;                \n" +
+                "let nameVar2 = document.getElementById(\"valor2\").value;                \n" +
+                "const xhttp = new XMLHttpRequest();\n" +
+                "xhttp.onload = function() {                    \n" +
+                "document.getElementById(\"informacion\").innerHTML =                    this.responseText;                }                \n" +
+                "xhttp.open(\"GET\", \"/vector?numero1=\"+nameVar1+\"&numero2=\"+nameVar2); xhttp.send();}        </script> </body> </html>";
 
         return html;
     }
