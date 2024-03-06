@@ -39,6 +39,9 @@ En este laboratorio crearemos una aplicación web pequeña usando el micro-frame
 * Para poder correr el codigo abra el IDE de su preferencia y ejecute la clase:
     - SparkWebServer
 
+      ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/d7276505-9f02-4802-b915-92ac2af29db5)
+
+
 ## Ejecución
 
 * Una vez realizado el paso anterior dirijase al navegador de su preferencia y agregue la siguiente url:
@@ -47,7 +50,10 @@ En este laboratorio crearemos una aplicación web pequeña usando el micro-frame
       http://localhost:4567/cliente
     ~~~ 
 
-* Cuando ingresa a esa url puede evidenciar la siguiente pagina.
+* Cuando ingresa a la url mencionada anteriormente, podra evidenciar la siguiente pagina.
+
+  ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/2671397b-67bb-4226-8cb9-fabd01c5410f)
+
 
 * Además tambien puede arrancar correr la aplicación por comando, para esto debe realizar los siguientes pasos:
     
@@ -77,9 +83,13 @@ En este laboratorio crearemos una aplicación web pequeña usando el micro-frame
     
 ## Pruebas
 
-* Para verificar las funcionalidades probamos con los valores que estan por defecto y como podemos ver si esta realizando las respectivas operaciones:
+* Para verificar las funcionalidades probamos con los valores que estan por defecto y como podemos ver si esta realizando las respectivas operaciones
+
+  ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/9365a043-bfc0-4df5-9103-a5ba031014f6)
 
 * Además probamos con otros datos para observar, si su comportamiento sigue siendo el correcto
+
+  ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/41ff971e-7ec4-4c8e-8370-56d8e7bcb8a6)
 
 
 *  Si desea  tambien en la terminal del IDE puede correr la carpeta test de la siguiente forma:
