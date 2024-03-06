@@ -1,4 +1,4 @@
-package org.example;
+package org.arep;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -76,7 +76,7 @@ public class SparkWebServer {
 
                 "<h1>Funcion seno</h1>        \n" +
                 "<label for=\"name\">Ingrese el numero:</label><br>            \n" +
-                "<input type=\"text\" id=\"number\" name=\"number\" value=\"\"><br><br>            \n" +
+                "<input type=\"text\" id=\"number\" name=\"number\" value=\"2\"><br><br>            \n" +
                 "<input type=\"button\" value=\"enviar\" onclick=\"loadGetMsg()\">        \n" +
                 "</form><div id=\"getrespmsg\"></div>\n" +
                 "<script>function loadGetMsg() {\n" +
@@ -88,7 +88,7 @@ public class SparkWebServer {
 
                 "<h1>Funcion coseno</h1>        \n" +
                 "<label for=\"name\">Ingrese el numero:</label><br>            \n" +
-                "<input type=\"text\" id=\"valor\" name=\"valor\" value=\"\"><br><br>            \n" +
+                "<input type=\"text\" id=\"valor\" name=\"valor\" value=\"43\"><br><br>            \n" +
                 "<input type=\"button\" value=\"enviar\" onclick=\"loadMsg()\">        \n" +
                 "</form><div id=\"msg\"></div>\n" +
                 "<script>function loadMsg() {\n" +
@@ -100,7 +100,7 @@ public class SparkWebServer {
 
                 " <h1>Palindrome</h1>        \n" +
                 "<label for=\"name\">Ingrese la palabra:</label><br>            \n" +
-                "<input type=\"text\" id=\"word\" name=\"word\" value=\"\"><br><br>            \n" +
+                "<input type=\"text\" id=\"word\" name=\"word\" value=\"arenerA\"><br><br>            \n" +
                 "<input type=\"button\" value=\"enviar\" onclick=\"load()\">        \n" +
                 "</form><div id=\"respuesta\"></div>\n" +
                 "<script>function load() {\n" +
@@ -112,8 +112,8 @@ public class SparkWebServer {
 
                 "<h1>Vector</h1>        \n" +
                 "<label for=\"name\">Ingrese los numeros:</label><br>            \n" +
-                "<input type=\"text\" id=\"valor1\" name=\"valor1\" value=\"\"><br><br>            \n" +
-                "<input type=\"text\" id=\"valor2\" name=\"valor2\" value=\"\"><br><br>            \n" +
+                "<input type=\"text\" id=\"valor1\" name=\"valor1\" value=\"3\"><br><br>            \n" +
+                "<input type=\"text\" id=\"valor2\" name=\"valor2\" value=\"2\"><br><br>            \n" +
                 "<input type=\"button\" value=\"enviar\" onclick=\"prueba()\">        \n" +
                 "</form><div id=\"informacion\"></div>\n" +
                 "<script>function prueba() {\n" +
