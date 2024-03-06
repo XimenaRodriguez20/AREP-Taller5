@@ -98,10 +98,21 @@ En este laboratorio crearemos una aplicación web pequeña usando el micro-frame
     mvn test
     ~~~
 
+## Ejecucción con Docker 
+
+* En docker la imagen se veria de la siguiente forma:
+
+* 
+
 ## Arquitectura del programa
 
 * Para este programa utilizamos metodos de la libreria Spark para obtener los datos con los cuales trabajaremos las respectivas funciones matematicas y la determinacion de si una palabra es palindrome, en la clase SparkWebServer se encuentra toda la logica donde tenemos un metodo el cual se encarga de devolvernos el html con los respectivos resultados segun los datos que el usuario le proporcione, hay mismo hacemos uso de javascript para jalar los datos que el usuario digite y con esto mandarlos a sus respectivas /endpoit donde cada uno se encarga de realizar una funcion en especifico
 
+* En la terminal de nuestro IDE o del sistema operativo colocamos el siguiente comando
+
+    ~~~
+        docker run -d -p 34000:46000 --name taller5 ximenarodriguez20/arep-taller5:latest
+    ~~~
 ## Autor
 
 * **Ximena Rodriguez** 
