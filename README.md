@@ -103,7 +103,13 @@ En este laboratorio crearemos una aplicación web pequeña usando el micro-frame
 
     ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/5fac9b5f-bec9-48e6-844d-7e1326169a5f)
 
-    
+
+* Añado la url del DockerHub por si desea consultar el repositorio
+
+    ~~~
+        https://hub.docker.com/repository/docker/ximenarodriguez20/arep-taller5/general
+    ~~~ 
+  
 ## Pruebas
 
 * Para verificar las funcionalidades, probamos con los valores que estan por defecto y como podemos ver si esta realizando las respectivas operaciones
