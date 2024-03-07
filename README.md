@@ -42,7 +42,7 @@ En este laboratorio crearemos una aplicación web pequeña usando el micro-frame
       ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/d7276505-9f02-4802-b915-92ac2af29db5)
 
 
-## Ejecución
+## Ejecución por IDE o Comando
 
 * Una vez realizado el paso anterior dirijase al navegador de su preferencia y agregue la siguiente url:
 
@@ -80,39 +80,85 @@ En este laboratorio crearemos una aplicación web pequeña usando el micro-frame
     ~~~
         java -cp "target/classes:target/dependency/*" org.arep.SparkWebServer
     ~~~
+
+## Ejecución con Docker
+
+* Primero debera abrir Docker y en la consola del sistema operativo o la terminal del IDE, debera escribir el siguiente comando
+ 
+    ~~~
+        docker run -d -p 34000:46000 --name taller5 ximenarodriguez20/arep-taller5:latest 
+    ~~~
+
+* Una vez realizado el paso anterior se podra observar en la aplicación Docker el contenedor y la imagen del proyecto.
+
+  ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/1c252529-435c-4ce5-a183-b2487398d2ee)
+
+  ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/75e27cc3-cb37-4989-82c6-9d1c2ddbfeba)
+
+* Ahora para ingresar a la pagina web deberemos escribir la siguiente url
+
+    ~~~
+        http://localhost:34000/cliente
+    ~~~
+
+    ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/5fac9b5f-bec9-48e6-844d-7e1326169a5f)
+
     
 ## Pruebas
 
-* Para verificar las funcionalidades probamos con los valores que estan por defecto y como podemos ver si esta realizando las respectivas operaciones
+* Para verificar las funcionalidades, probamos con los valores que estan por defecto y como podemos ver si esta realizando las respectivas operaciones
 
   ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/9365a043-bfc0-4df5-9103-a5ba031014f6)
 
-* Además probamos con otros datos para observar, si su comportamiento sigue siendo el correcto
+* Además probamos con otros datos para observar, que su comportamiento sea el correcto
 
   ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/41ff971e-7ec4-4c8e-8370-56d8e7bcb8a6)
+  
 
+* Tambien se realizo las pruebas de funcionalidades, con la url que se genera al ejecutar el programa con docker
 
-*  Si desea  tambien en la terminal del IDE puede correr la carpeta test de la siguiente forma:
+  ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/b889c5d7-0f91-4f78-b64c-635991a791e8)
 
-    ~~~
-    mvn test
-    ~~~
+* A continuación se mostraran los /endpoints que se implementaron para cada funcionalidad. 
 
-## Ejecucción con Docker 
+    - Función Seno
+      
+        ~~~
+            http://localhost:34000/sin?numero=2
+        ~~~
+      
+        ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/b996321b-aaa9-463c-9c08-753e36d068b1)
+      
+    - Función Coseno
+ 
+        ~~~
+            http://localhost:34000/cos?numero=87
+        ~~~
 
-* En docker la imagen se veria de la siguiente forma:
+        ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/98061cdc-daa7-4678-b42b-d8228b97fa27)
 
-* 
+    - Palindrome
+ 
+        ~~~
+            http://localhost:34000/palindrome?palabra=Oso
+        ~~~
+
+        ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/062fd179-7ca5-4260-a799-4f023fa9e064)
+
+    - Vector
+ 
+        ~~~
+            http://localhost:34000/vector?numero1=5&numero2=9
+        ~~~
+
+        ![image](https://github.com/XimenaRodriguez20/AREP-Taller5/assets/123812926/68a86ef9-f303-4f90-a8cf-b1568e335c21)
 
 ## Arquitectura del programa
 
-* Para este programa utilizamos metodos de la libreria Spark para obtener los datos con los cuales trabajaremos las respectivas funciones matematicas y la determinacion de si una palabra es palindrome, en la clase SparkWebServer se encuentra toda la logica donde tenemos un metodo el cual se encarga de devolvernos el html con los respectivos resultados segun los datos que el usuario le proporcione, hay mismo hacemos uso de javascript para jalar los datos que el usuario digite y con esto mandarlos a sus respectivas /endpoit donde cada uno se encarga de realizar una funcion en especifico
+* Para este programa utilizamos metodos de la libreria Spark para obtener los parametros con los cuales trabajaremos las respectivas funciones matematicas y la determinacion de si una palabra es palindrome, esto con la ayuda de diferentes endpoints los cuales tendran una funcionalidad que se especificaran en la clase SparkWebServer.
 
-* En la terminal de nuestro IDE o del sistema operativo colocamos el siguiente comando
+* SparkWebServer es la clase donde esta toda la logica, en esta se tendra el metodo httpResponse cual se encarga de devolver el html con los respectivos resultados según los datos que el usuario le proporcione, ya que en este mismo metodos se hara uso de javascript para jalar los datos que el usuario digite y con esto mandarlos a sus respectivas /endpoit donde cada uno se encarga de realizar una funcionalidad en especifico.
 
-    ~~~
-        docker run -d -p 34000:46000 --name taller5 ximenarodriguez20/arep-taller5:latest
-    ~~~
 ## Autor
 
 * **Ximena Rodriguez** 
